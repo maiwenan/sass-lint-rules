@@ -1,0 +1,15 @@
+{
+  "name": "sass-lint-rules",
+  "version": "0.1.0",
+  "description": "sass-lint 规则的翻译",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "sass-lint",
+    "rules"
+  ],
+  "author": "haw",
+  "license": "ISC"
+}
