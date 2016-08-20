@@ -1,24 +1,24 @@
-# No Color Literals
+# 禁止颜色字面值
 
-Rule `no-color-literals` will disallow the use of color literals and basic color functions in any declarations other than variables or maps/lists.
+`no-color-literals` 规则会禁止在任何样式规则声明中使用颜色字面值和基础的颜色方法，变量和 maps/lists 除外。
 
-The list of affected color functions are as follows:
+被涉及到的颜色方法见下面所列出来的列表:
 * `rgb`
 * `rgba`
 * `hsl`
 * `hsla`
 
-Other color functions, such as `adjust-color` and `mix`, may be used, but the original color must be passed in as a variable.
+其他的颜色方法，比如 `adjust-color` 和 `mix` 也可能会被影响，除非他们所接收的原始颜色值是作为一个变量传进去。
 
-## Options
+## 可选的配置参数
 
-* `allow-map-identifiers`: `true`/`false` (defaults to `true`)
-* `allow-rgba`: `true`/`false` (defaults to `false`)
-* `allow-variable-identifiers`: `true`/`false` (defaults to `true`)
+* `allow-map-identifiers`: `true`/`false` (默认为 `true`)
+* `allow-rgba`: `true`/`false` (默认为 `false`)
+* `allow-variable-identifiers`: `true`/`false` (默认为 `true`)
 
-## Examples
+## 例子
 
-When enabled and default options are used the following are disallowed.
+当启用时，而且默认的配置参数被使用，下面的写法是不被允许的。
 
 ```scss
 .literal {
@@ -41,27 +41,27 @@ When enabled and default options are used the following are disallowed.
   color: #fff;
 }
 
-// rgb function passed directly as function argument
+// rgb 方法直接作为方法参数传递
 .adj {
   color: adjust-color(rgb(255, 0, 0), $blue: 5);
 }
 
-// hsl function passed directly as function argument
+// hsl 方法直接作为方法参数传递
 .scale {
   color: scale-color(hsl(120, 70%, 80%), $lightness: 50%);
 }
 
-// hsl function passed directly as function argument
+// hsl 方法直接作为方法参数传递
 .change {
   color: change-color(hsl(25, 100%, 80%), $lightness: 40%, $alpha: .8);
 }
 
-// color literal passed directly as function argument
+// 颜色十六进制值直接作为方法参数传递
 .function {
   color: test(#fff);
 }
 
-// color functions used directly as property values
+// 颜色方法直接使用属性值作为参数
 .rgb {
   color: rgb(255, 255, 255);
 }
@@ -80,7 +80,7 @@ When enabled and default options are used the following are disallowed.
 
 ```
 
-When enabled and default options are used the following are allowed.
+当启用时，而且默认的配置参数被使用，下面的写法是被允许的。
 
 ```scss
 $literal: mediumslateblue;
@@ -90,7 +90,7 @@ $rgba: rgba(255, 255, 255, .3);
 $hsl: hsl(40, 50%, 50%);
 $hsla: hsla(40, 50%, 50%, .3);
 
-// using color literals as property names
+// 使用十六进制颜色值作为属性值
 $colors: (
   red: #fff,
   blue : (
@@ -98,7 +98,7 @@ $colors: (
   )
 );
 
-// using color literals as variable identifiers
+// 使用颜色字面值作为变量标识符
 $black: #000;
 
 .literal {
@@ -154,24 +154,25 @@ $black: #000;
 
 ## [allow-rgba: true]
 
-When enabled and `allow-rgba` is set to `true`, the following will be allowed:
+当启用时，而且设置 `allow-rgba: true` ，下面的写法是被允许的:
 
 ```scss
-// rgba in variables is still fine
+// rgba 作为一个变量的值是没问题的
 $rgba: rgba(255, 0, 0, .5);
 $red: rgb(255, 255, 255,);
 
-// rgba can be used directly to alter a variables opacity
+// rgba 方法可以直接使用如果他是一个变量的透明度
 .color {
   color: rgba($red, .3);
 }
 ```
 
+另外，当启用时，而且设置为 `allow-rgba: true` ，下面的写法是不被允许的。
 In addition, when enabled and `allow-rgba` is set to `true`, the following will be disallowed:
 
 ```scss
 .color {
-  // you must use variables and not literals
+  // 一定要使用变量而不是直接的字面值
   color: rgba(0, 0, 0, .3);
   color: rgba(black, .3);
 }
@@ -181,25 +182,25 @@ In addition, when enabled and `allow-rgba` is set to `true`, the following will 
 
 ## [allow-variable-identifiers: false]
 
-When enabled and `allow-variable-identifiers` is set to `false`, the following will be disallowed
+当启用时，而且设置 `allow-variable-identifiers: false` ，下面的写法是不被允许的。
 
 ```scss
 
-// variable uses a color literal as an identifier
+// 变量使用一个颜色字面量作为一个标识符
 $black: #000
 
-// variable using a color literal as an identifier is passed to a function
+// 变量使用一个颜色字面量作为一个标识符被作为参数传递给方法
 .test {
   color: adjust-color($off-red, $blue: 5)
 }
 
 ```
 
-When enabled and `allow-variable-identifiers` is set to `false`, the following will be allowed
+当启用时，而且设置 `allow-variable-identifiers: false` ，下面的写法是被允许的。
 
 ```scss
 
-// variable not directly using a color literal as an identifier
+// 变量没有直接使用一个颜色字面量作为一个标识符
 $primary-black: #000
 
 ```
@@ -208,10 +209,11 @@ $primary-black: #000
 
 ## [allow-map-identifiers: false]
 
-When enabled and `allow-map-identifiers` is set to `false`, the following will be disallowed
+当启用时，而且设置 `allow-map-identifiers: false` ，下面的写法是不被允许的。
 
 ```scss
 
+// map 标识符 red, blue, orange 和颜色字面值共享他们的名称，这是不应该使用的
 // map identifiers red, blue and orange share their name with a
 // color literal and therefore shouldn't be used
 $colors: (
@@ -223,7 +225,7 @@ $colors: (
 
 ```
 
-When enabled and `allow-map-identifiers` is set to `false`, the following will be allowed
+当启用时，而且设置 `allow-map-identifiers: false` ，下面的写法是被允许的。
 
 ```scss
 
