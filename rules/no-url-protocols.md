@@ -1,10 +1,10 @@
-# No URL Protocols
+# 禁止使用有协议的链接
 
-Rule `no-url-protocols` will enforce that protocols and domains are not used within urls.
+`no-url-protocols` 规则会强制在链接中不能使用协议和域名。
 
-## Examples
+## 例子
 
-When enabled, the following are allowed:
+当启用时，下面的写法是被允许的:
 
 ```scss
 .foo {
@@ -20,7 +20,7 @@ When enabled, the following are allowed:
 }
 ```
 
-When enabled, the following are disallowed:
+当启用时，下面的写法是不被允许的:
 
 ```scss
 .foo {

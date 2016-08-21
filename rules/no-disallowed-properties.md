@@ -1,14 +1,14 @@
-# No Disallowed Properties
+# 禁止使用某些属性
 
-Rule `no-disallowed-properties` will warn against the use of certain properties. 
+`no-disallowed-properties` 规则会对某些属性的使用进行警告。
 
-## Options
+## 可选的参数
 
-* `properties`: `[array of disallowed properties]` (defaults to empty array `[]`).
+* `properties`: `[禁止使用的属性组成的数组]` (默认为空数组 `[]`)。
 
-## Examples
+## 例子
 
-When `properties` contains a property value of `z-index` as shown below:
+当 `properties` 包含一个 `z-index` 的属性值的时候，如下面所示:
 
 ```yaml
 no-disallowed-properties:
@@ -18,11 +18,11 @@ no-disallowed-properties:
       - 'z-index'
 ```
 
-The following would not be allowed:
+下面的写法是不被允许的:
 
 ```scss
 
-// z-index property is not allowed
+// z-index 属性是不允许使用的
 .foo {
   z-index: 10;
 }

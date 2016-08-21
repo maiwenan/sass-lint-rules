@@ -1,15 +1,15 @@
-# No Duplicate Properties
+# 禁止重复的属性
 
-Rule `no-duplicate-properties` will enforce that duplicate properties are not allowed within the same block.
+`no-duplicate-properties` 规则会强制在同一个样式块中不能出现重复的属性。
 
-## Options
+## 可选的配置参数
 
-* `exclude`: `[array of property names to be excluded from this rule]` (defaults to empty array `[]`)
+* `exclude`: `[一组被排除掉的属性名]` (默认为空数组 `[]`)
 
 
-## Examples
+## 例子
 
-When enabled, the following are disallowed:
+当启用时，下面的写法是不被允许的:
 
 ```scss
 .foo {
@@ -18,9 +18,9 @@ When enabled, the following are disallowed:
 }
 ```
 
-### Exclude
+### 不包含
 
-When a property is added to the exclude array as shown below then you may place duplicate properties immediately after one another, this is to prevent accidental duplication of properties.
+当一个属性被添加到不包含数组时，如下面所示的，你才可以紧接着另外一个属性去放置重复的属性，这是为了避免意料之外的重复属性。
 
 ```yml
 no-duplicate-properties:
@@ -30,7 +30,7 @@ no-duplicate-properties:
       - display
 ```
 
-When `display` is added to the exclude array the following would be allowed:
+当 `display` 属性被添加到不包含数组中时，下面的写法是被允许的:
 
 ```scss
 .display-block {
@@ -40,7 +40,7 @@ When `display` is added to the exclude array the following would be allowed:
 }
 ```
 
-When `display` is added to the exclude array the following would be still be disallowed as the duplicate properties are separated by another property:
+当 `display` 属性被添加到不包含数组中时，下面的写法依然是不被允许的，因为重复的属性被其他的属性分隔开了:
 
 ```scss
 .display-block {

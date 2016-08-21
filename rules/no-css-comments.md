@@ -1,37 +1,37 @@
-# No CSS Comments
+# 进制 css 注释
 
-Rule `no-css-comments` will enforce the use of Sass single-line comments and disallow CSS comments. Bang comments (`/*! */`, will be printed even in minified mode) are still allowed.
+`no-css-comments` 规则会强制使用 sass 的单行注释并且禁止 css 注释。Bang 注释（`/*! */` ，即使在最简模式中也会打印出来）仍然是允许的。
 
-## Examples
+## 例子
 
-When enabled the following are allowed:
+当启用时，下面的写法是被允许的:
 
 ```scss
 
-// This is a good comment
+// 这是一个好的注释
 
 // =========
-// This is a good comment
+// 这是一个好的注释
 // =========
 
 //////////////////
-// This is a good comment
+// 这是一个好的注释
 //////////////////
 
-/*! This is a good bang comment */
+/*! 这是一个好的 Bang 注释 */
 
 /*!
-  * This is a good bang comment
+  * 这是一个好的 Bang 注释
 **/
 ```
 
-When enabled the following are disallowed:
+当启用时，下面的写法是不被允许的:
 
 ```scss
 
-/* This comment will appear in your compiled css */
+/* 这个注释会出现在你编译后的 css 中 */
 
 /*
- * Mulitline comments are bad
+ * 这个多行注释是不好的
  */
 ```

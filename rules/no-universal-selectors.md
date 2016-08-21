@@ -1,10 +1,10 @@
-# No Universal Selectors
+# 禁止全体选择器 (*)
 
-Rule `no-universal-selectors` will warn against the use of `*` (universal) selectors.
+`no-universal-selectors` 规则会对 `*` （全体的）选择器的使用进行警告。
 
-## Examples
+## 例子
 
-When enabled, the following are disallowed:
+当启用时，下面的写法是不被允许的:
 
 ```scss
 * {

@@ -1,20 +1,21 @@
-# No Vendor Prefixes
+# 禁止浏览器前缀
 
-Rule `no-vendor-prefixes` will enforce that vendor prefixes are not allowed to be used.
+`no-vendor-prefixes` 规则会强制禁止使用浏览器前缀。
 
-List of prefixes affected by default:
+默认情况下，下面列出的前缀都会被影响:
 * webkit
 * moz
 * ms
 
-## Options
+## 可选的配置参数
 
-* `additional-identifiers`: `[array of additional prefixes to check for]` (defaults to empty array `[]`)
-* `excluded-identifiers`: `[array of prefixes to exclude checking for]` (defaults to empty array `[]`)
-* `ignore-non-standard`: `true`:`false` (defaults to `false`)
+* `additional-identifiers`: `[需要检测的额外的前缀组成的数组]` (默认为空数组 `[]`)
+* `excluded-identifiers`: `[不需要检测的前缀组成的数组]` (默认为空数组 `[]`)
+* `ignore-non-standard`: `true`:`false` (默认为 `false`)
 
-## Examples
+## 例子
 
+当启用时，下面的写法是不被允许的:
 When enabled, the following are disallowed:
 
 ```scss
@@ -39,9 +40,9 @@ When enabled, the following are disallowed:
 }
 ```
 
-### Additional Identifiers
+### 额外的标识符
 
-When `additional-identifiers` contains a custom prefix value of `khtml` as show below
+当设置 `additional-identifiers` 包含一个自定义的前缀 `khtml` 时，如下面所示:
 
 ```yaml
 no-vendor-prefixes:
@@ -51,7 +52,7 @@ no-vendor-prefixes:
       - khtml
 ```
 
-The following would now also be disallowed
+下面的写法现在是不被允许的:
 
 ```scss
 .baz {
@@ -59,9 +60,9 @@ The following would now also be disallowed
 }
 ```
 
-### Excluded Identifiers
+### 不包含的标识符
 
-When `excluded-identifiers` contains currently disallowed prefix values such as `webkit` and `moz` as show below
+当设置 `excluded-identifiers` 包含现在不被允许的前缀值，如 `webkit` 和 `moz` 时，如下面所示:
 
 ```yaml
 no-vendor-prefixes:
@@ -72,7 +73,7 @@ no-vendor-prefixes:
       - moz
 ```
 
-The following would now be allowed
+下面的写法现在是被允许的:
 
 ```scss
 @-webkit-keyframes anim {
@@ -92,7 +93,7 @@ The following would now be allowed
 }
 ```
 
-While the following would remain disallowed
+下面的写法依然是不被允许的:
 
 ```scss
 
@@ -101,11 +102,11 @@ While the following would remain disallowed
 }
 ```
 
-### Ignore Non Standard
+### 忽略非标准的属性
 
-`ignore-non-standard` is an option that allows you to specify whether only standard properties from our [properties list](https://github.com/sasstools/sass-lint/blob/master/data/properties.yml) should be affected by this rule or if any prefixed property / element should be affected.
+`ignore-non-standard` 是一个允许你指定是只有标准的来自我们的[属性列表](https://github.com/sasstools/sass-lint/blob/master/data/properties.yml)的属性应该被这条规则影响到，或者是人和有前缀的属性或者元素都会被影响到。
 
-When `ignore-non-standard` is set to `false` the following are disallowed, when `ignore-non-standard` is set to `true` the following are allowed:
+当设置 `ignore-non-standard: false` 时，下面的写法是不被允许的。当设置 `ignore-non-standard: true` 时，下面的写法是被允许的:
 
 ```scss
 

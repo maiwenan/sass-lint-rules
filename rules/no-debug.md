@@ -1,10 +1,10 @@
-# No Debug
+# 禁止调试
 
-Rule `no-debug` will enforce that `@debug` statements are not allowed to be used.
+`no-debug` 规则会强制禁止使用 `@debug` 表达式。
 
-## Examples
+## 例子
 
-When enabled, the following are disallowed:
+当启用时，下面的写法是不被允许的:
 
 ```scss
 @debug 'foo';

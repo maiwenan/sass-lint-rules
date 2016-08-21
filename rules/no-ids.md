@@ -1,10 +1,10 @@
-# No IDs
+# 禁止 ID 选择器
 
-Rule `no-ids` will enforce that ID selectors are not allowed to be used.
+`no-ids` 规则会强制禁止使用 ID 选择器。
 
-## Examples
+## 例子
 
-When enabled, the following are disallowed:
+当启用时，下面的写法是不被允许的:
 
 ```scss
 #foo {

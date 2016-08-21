@@ -1,10 +1,10 @@
-# No Warn
+# 禁止警告表达式
 
-Rule `no-warn` will enforce that `@warn` statements are not allowed to be used.
+`no-warn` 规则会强制禁止使用 `@warn` 表达式。
 
-## Examples
+## 例子
 
-When enabled, the following are disallowed:
+当启用时，下面的写法是不被允许的:
 
 ```scss
 @warn 'foo';

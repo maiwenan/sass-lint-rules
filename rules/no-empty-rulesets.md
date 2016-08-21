@@ -1,10 +1,10 @@
-# No Empty Rulesets
+# 禁止空白的样式规则集
 
-Rule `no-empty-rulesets` will enforce that rulesets are not empty.
+`no-empty-rulesets` 规则会禁止空白的样式规则集。
 
-## Examples
+## 例子
 
-When enabled, the following are disallowed:
+当启用的时，下面的写法是不被允许的:
 
 ```scss
 .foo {

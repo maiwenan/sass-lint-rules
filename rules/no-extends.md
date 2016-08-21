@@ -1,10 +1,10 @@
-# No Extends
+# 禁止使用继承
 
-Rule `no-extends` will enforce that extends are not allowed to be used.
+`no-extends` 规则会强制不能使用继承。
 
-## Examples
+## 例子
 
-When enabled, the following are disallowed:
+当启用时，下面的写法是不被允许的:
 
 ```scss
 .foo {

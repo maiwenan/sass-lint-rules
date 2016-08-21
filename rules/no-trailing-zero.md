@@ -1,10 +1,10 @@
-# No Trailing Zero
+# 禁止小数点最后的 0
 
-Rule `no-trailing-zero` will enforce that trailing zeros are not allowed.
+`no-trailing-zero` 规则会强制小数点最后不能有 0 .
 
-## Examples
+## 例子
 
-When enabled, the following are disallowed:
+当启用时，下面的写法是不被允许的:
 
 ```scss
 .foo {

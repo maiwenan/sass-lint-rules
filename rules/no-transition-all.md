@@ -1,10 +1,10 @@
-# No Transition All
+# 禁止使用 `transition` 属性使用 `all` 作为值
 
-Rule `no-transition-all` will enforce whether the keyword `all` can be used with the `transition` or `transition-property` property.
+`no-transition-all` 规则会强制 `all` 关键字是否能和 `transition` 属性或者 `transition-property` 属性一起使用。
 
-## Examples
+## 例子
 
-When enabled the following are disallowed
+下面的写法是不被允许的:
 
 ```scss
 .foo {

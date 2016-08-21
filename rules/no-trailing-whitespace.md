@@ -1,10 +1,10 @@
-# No Trailing Whitespace
+# 禁止行尾的空格
 
-Rule `no-trailing-whitespace` will enforce that trailing whitespace is not allowed.
+`no-trailing-whitespace` 规则会强制行尾不能有空格。
 
-## Examples
+## 例子
 
-When enabled, the following are disallowed (\s denotes spaces or tabs):
+当启用时，下面的写法是不被允许的 (\s 表示空格或 tab):
 
 ```scss
 .foo {\s

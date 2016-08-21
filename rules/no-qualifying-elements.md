@@ -1,16 +1,16 @@
-# No Qualifying Elements
+# 禁止限定元素
 
-Rule `no-qualifying-elements` will enforce that selectors are not allowed to have qualifying elements.
+`no-qualifying-elements` 规则会强制选择器不能有限定元素（qualifying elements）。
 
-## Options
+## 可选的配置参数
 
-* `allow-element-with-attribute`: `true`/`false` (defaults to `false`)
-* `allow-element-with-class`: `true`/`false` (defaults to `false`)
-* `allow-element-with-id`: `true`/`false` (defaults to `false`)
+* `allow-element-with-attribute`: `true`/`false` (默认为 `false`)
+* `allow-element-with-class`: `true`/`false` (默认为 `false`)
+* `allow-element-with-id`: `true`/`false` (默认为 `false`)
 
-## Examples
+## 例子
 
-By default, the following are disallowed:
+默认的情况下，下面的写法是不被允许的:
 
 ```scss
 div.foo {
@@ -28,7 +28,7 @@ input[type='email'] {
 
 ### `allow-element-with-attribute`
 
-When `allow-element-with-attribute: true`, the following are allowed. When `allow-element-with-attribute: false`, the following are disallowed.
+当设置 `allow-element-with-attribute: true` 时，下面的写法是被允许的。当设置 `allow-element-with-attribute: false` 时，下面的写法是不被允许的。
 
 ```scss
 input[type='email'] {
@@ -42,7 +42,7 @@ a[href] {
 
 ### `allow-element-with-class`
 
-When `allow-element-with-class: true`, the following are allowed. When `allow-element-with-class: false`, the following are disallowed.
+当设置 `allow-element-with-class: true` 时，下面的写法是被允许的。当设置 `allow-element-with-class: true` 时，下面的写法是不被允许的。
 
 ```scss
 div.foo {
@@ -56,7 +56,7 @@ h1.bar {
 
 ### `allow-element-with-id`
 
-When `allow-element-with-id: true`, the following are allowed. When `allow-element-with-id: false`, the following are disallowed.
+当设置 `allow-element-with-id: true` 时，下面的写法是被允许的。当设置 `allow-element-with-id: true` 时，下面的写法是不被允许的。
 
 ```scss
 ul#foo {
