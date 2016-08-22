@@ -4,7 +4,7 @@
   "description": "sass-lint 规则的翻译",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "sass-lint -v -q"
   },
   "keywords": [
     "sass-lint",
@@ -12,5 +12,8 @@
     "code standard"
   ],
   "author": "haw",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "sass-lint": "^1.9.0"
+  }
 }
