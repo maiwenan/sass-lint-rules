@@ -1,10 +1,10 @@
-# Placeholder in Extend
+# 继承中只能使用占位符
 
-Rule `placeholder-in-extend` will enforce whether extends should only include placeholder selectors.
+`placeholder-in-extend` 规则会强制在继承中只能包含占位符选择器。
 
-## Examples
+## 例子
 
-When enabled, the following are allowed:
+当启用时，下面的写法是被允许的:
 
 ```scss
 .foo {
@@ -13,7 +13,7 @@ When enabled, the following are allowed:
 }
 ```
 
-When enabled, the following are disallowed:
+当启用时，下面的写法是不被允许的:
 
 ```scss
 .foo {

@@ -1,10 +1,10 @@
-# One Declaration Per Line
+# 每行只能有一个样式声明
 
-Rule `one-declaration-per-line` will enforce that new declarations must begin on new lines.
+`one-declaration-per-line` 规则会强制心得样式声明必须在心的一行开始。
 
-## Examples
+## 例子
 
-When enabled, the following are allowed:
+当启用时，下面的写法是被允许的:
 
 ```scss
 .foo {
@@ -13,7 +13,7 @@ When enabled, the following are allowed:
 }
 ```
 
-When enabled, the following are disallowed:
+当启用时，下面的写法是不被允许的:
 
 ```scss
 .foo {content: 'baz', content: 'qux'};

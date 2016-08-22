@@ -1,14 +1,14 @@
-# Space Around Operator
+# 操作符中的空格
 
-Rule `space-around-operator` will enforce whether or not a single space should be included before and after the following operators: `+`, `-`, `/`, `*`, `%`, `<`, `>` `==`, `!=`, `<=` and `>=`.
+`space-around-operator` 规则会强制一个空格是否应该被包含在下面操作符的前面和后面:`+`, `-`, `/`, `*`, `%`, `<`, `>` `==`, `!=`, `<=` and `>=`。
 
-## Options
+## 可选的配置参数
 
-* `include`: `true`/`false` (defaults to `true`)
+* `include`: `true`/`false` (默认为 `true`)
 
-## Examples
+## 例子
 
-When `include: true`, the following are allowed. When `include: false`, the following are disallowed:
+设置为 `include: true` 时，下面的写法是被允许的。设置为 `include: false` 时，下面的写法是不被允许的。
 
 ```scss
 .foo {
@@ -34,7 +34,7 @@ $bar: 2 - 1;
 }
 ```
 
-When `include: false`, the following are allowed. When `include: true`, the following are disallowed:
+设置为 `include: false` 时，下面的写法是被允许的。设置为 `include: true` 时，下面的写法是不被允许的。
 
 ```scss
 .foo {
@@ -59,8 +59,7 @@ $bar: 2-1;
   $baz: 1;
 }
 ```
-
-When `include: true` or `include: false` multiple spaces around operators are disallowed:
+设置为 `include: true` 或者 `include: false` 时，多个空格在操作符的周围是不被允许的:
 
 ```scss
 .foo {

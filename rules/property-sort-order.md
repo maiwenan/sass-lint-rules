@@ -1,16 +1,17 @@
-# Property Sort Order
+# 属性排序顺序
 
-Rule `property-sort-order` will enforce the order in which declarations are written.
+`property-sort-order` 规则会强制样式声明要按顺序书写。
 
-## Options
+## 可选的配置参数
 
-* `order`: `'alphabetical'`, [`'concentric'`](http://rhodesmill.org/brandon/2011/concentric-css/), [`'recess'`](http://twitter.github.io/recess/), [`'smacss'`](http://smacss.com/book/formatting), or `[array of properties]` (defaults to `alphabetical`. Unknown properties are sorted alphabetically)
-* `ignore-custom-properties`: `true`/`false` (defaults to `false`)
+* `order`: `'alphabetical'`, [`'concentric'`](http://rhodesmill.org/brandon/2011/concentric-css/), [`'recess'`](http://twitter.github.io/recess/), [`'smacss'`](http://smacss.com/book/formatting), or `[属性组成的数组]` (默认为 `alphabetical`. 未知的属性是按照字母排序的)
+* `ignore-custom-properties`: `true`/`false` (默认为 `false`)
 
-Property orders: https://github.com/sasstools/sass-lint/tree/develop/lib/config/property-sort-orders
+属性顺序: https://github.com/sasstools/sass-lint/tree/develop/lib/config/property-sort-orders
 
-## Examples
+## 例子
 
+当启用时，（假设设置为 `order: alphabetical`），下面的写法是被允许的:
 When enabled (assuming `order: alphabetical`), the following are allowed:
 
 ```scss
@@ -21,7 +22,7 @@ When enabled (assuming `order: alphabetical`), the following are allowed:
 }
 ```
 
-When enabled (assuming `order: alphabetical`), the following are disallowed:
+当启用时，（假设设置为 `order: alphabetical`），下面的写法是不被允许的:
 
 ```scss
 .foo {
@@ -31,9 +32,9 @@ When enabled (assuming `order: alphabetical`), the following are disallowed:
 }
 ```
 
-### Custom Sort Orders
+### 自定义排序顺序
 
-You have the option to create your own custom property sort orders. These are specified in your `.sass-lint.yml` file as below:
+你拥有创建你自己的排序顺序的选择。这些自定义的排序指定在你的 `.sass-lit.yml` 文件如下所示:
 
 ```yaml
 property-sort-order:
@@ -45,7 +46,7 @@ property-sort-order:
       - color
 ```
 
-When the custom order is specified as above, the following are allowed:
+当自定义的排序像上面那样被指定时，下面的写法是被允许的:
 
 ```scss
 .foo {
@@ -55,7 +56,7 @@ When the custom order is specified as above, the following are allowed:
 }
 ```
 
-When the custom order is specified as above, the following are disallowed:
+当自定义的排序像上面那样被指定时，下面的写法是不被允许的:
 
 ```scss
 .foo {
@@ -65,9 +66,9 @@ When the custom order is specified as above, the following are disallowed:
 }
 ```
 
-### Ignore Custom Properties
+### 忽略自定义属性
 
-When `ignore-custom-properties: false` (assume `order: 'alphabetical'`) the following would be allowed
+当设置 `ignore-custom-properties: false` （假设 `order: 'alphabetical'`），下面的写法是被允许的。
 
 ```scss
 .foo {
@@ -78,7 +79,7 @@ When `ignore-custom-properties: false` (assume `order: 'alphabetical'`) the foll
 }
 ```
 
-When `ignore-custom-properties: false` (assume `order: 'alphabetical'`) the following would be disallowed
+当设置 `ignore-custom-properties: false` （假设 `order: 'alphabetical'`），下面的写法是不被允许的。
 
 ```scss
 .foo {
@@ -89,11 +90,11 @@ When `ignore-custom-properties: false` (assume `order: 'alphabetical'`) the foll
 }
 ```
 
-When `ignore-custom-properties: true` (assume `order: 'alphabetical'`) the following would be allowed
+当设置 `ignore-custom-properties: true` （假设 `order: 'alphabetical'`），下面的写法是被允许的。
 
 ```scss
 .foo {
-  composes: heading; // custom properties ignored
+  composes: heading; // 自定义属性被忽略掉
   border: 1px solid blue;
   color: red;
   display: block;

@@ -1,6 +1,6 @@
 {
   "name": "sass-lint-rules",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "sass-lint 规则的翻译",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,8 @@
   },
   "keywords": [
     "sass-lint",
-    "rules"
+    "rules",
+    "code standard"
   ],
   "author": "haw",
   "license": "ISC"

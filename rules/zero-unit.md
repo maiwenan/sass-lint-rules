@@ -1,14 +1,14 @@
-# Zero Unit
+# 值为 0 的单位
 
-Rule `zero-unit` will enforce whether or not values of `0` used for length should be unitless.
+`zero-unit` 规则会强制长度为 `0` 是否应该不使用单位。
 
-## Options
+## 可选的配置参数
 
-* `include`: `true`/`false` (defaults to `false`)
+* `include`: `true`/`false` (默认为 `false`)
 
-## Examples
+## 例子
 
-When `include: false`, the following are allowed. When `include: true`, the following are disallowed:
+设置为 `include: false` 时，下面的写法是被允许的。设置为 `include: true` 时，下面的写法是不被允许的。
 
 ```scss
 .foo {
@@ -20,7 +20,7 @@ When `include: false`, the following are allowed. When `include: true`, the foll
 }
 ```
 
-When `include: true`, the following are allowed. When `include: false`, the following are disallowed:
+设置为 `include: true` 时，下面的写法是被允许的。设置为 `include: false` 时，下面的写法是不被允许的。
 
 ```scss
 .foo {

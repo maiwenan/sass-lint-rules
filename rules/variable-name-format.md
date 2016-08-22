@@ -1,21 +1,21 @@
-# Variable Name Format
+# 变量命名风格
 
-Rule `variable-name-format` will enforce a convention for variable names.
+`variable-name-format` 规则会强制变量命名遵循一种规范。
 
-## Options
+## 可选的配置参数
 
-* `allow-leading-underscore`: `true`/`false` (defaults to `true`)
-* `convention`: `'hyphenatedlowercase'` (default), `camelcase`, `snakecase`, [`strictbem`](https://en.bem.info/method/definitions/),
-[`hyphenatedbem`](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/), or a Regular Expression that the variable name must match (e.g. `^[_A-Z]+$`)
-* `convention-explanation`: Custom explanation to display to the user if a variable doesn't adhere to the convention
+* `allow-leading-underscore`: `true`/`false` (默认为 `true`)
+* `convention`: `'hyphenatedlowercase'` (默认), `camelcase`, `snakecase`, [`strictbem`](https://en.bem.info/method/definitions/),
+[`hyphenatedbem`](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/), 或者一个类名匹配的正则表达式 (例如：`^[_A-Z]+&`)
+* `convention-explanation`: 如果一个变量命名和规范不匹配，则把这个自定义的说明展示给用户
 
-## Example 1
+## 例子 1
 
-Settings:
+设置:
 - `allow-leading-underscore: true`
 - `convention: hyphenatedlowercase`
 
-When enabled, the following are allowed:
+使用上面设置时，下面的写法是被允许的:
 
 ```scss
 $hyphenated-lowercase: 1px;
@@ -27,7 +27,7 @@ $_leading-underscore: 1px;
 
 ```
 
-When enabled, the following are disallowed:
+使用上面设置时，下面的写法是不被允许的:
 
 ```scss
 $HYPHENATED-UPPERCASE: 1px;
@@ -38,13 +38,13 @@ $_camelCaseWithLeadingUnderscore: 1px;
 }
 ```
 
-## Example 2
+## 例子 2
 
-Settings:
+设置:
 - `allow-leading-underscore: false`
 - `convention: camelcase`
 
-When enabled, the following are allowed:
+使用上面设置时，下面的写法是被允许的:
 
 ```scss
 $camelCase: 1px;
@@ -54,7 +54,7 @@ $camelCase: 1px;
 }
 ```
 
-When enabled, the following are disallowed:
+使用上面设置时，下面的写法是不被允许的:
 
 ```scss
 $HYPHENATED-UPPERCASE: 1px;
@@ -65,13 +65,13 @@ $_camelCaseWithLeadingUnderscore: 1px;
 }
 ```
 
-## Example 3
+## 例子 3
 
-Settings:
+设置:
 - `allow-leading-underscore: false`
 - `convention: pascalcase`
 
-When enabled, the following are allowed:
+使用上面设置时，下面的写法是被允许的:
 
 ```scss
 $PascalCase: 1px;
@@ -81,7 +81,7 @@ $PascalCase: 1px;
 }
 ```
 
-When enabled, the following are disallowed:
+使用上面设置时，下面的写法是不被允许的:
 
 ```scss
 $HYPHENATED-UPPERCASE: 1px;
@@ -92,13 +92,13 @@ $_camelCaseWithLeadingUnderscore: 1px;
 }
 ```
 
-## Example 4
+## 例子 4
 
-Settings:
+设置:
 - `allow-leading-underscore: false`
 - `convention: snakecase`
 
-When enabled, the following are allowed:
+使用上面设置时，下面的写法是被允许的:
 
 ```scss
 $snake_case: 1px;
@@ -108,7 +108,7 @@ $snake_case: 1px;
 }
 ```
 
-When enabled, the following are disallowed:
+使用上面设置时，下面的写法是不被允许的:
 
 ```scss
 $HYPHENATED-UPPERCASE: 1px;
@@ -119,12 +119,12 @@ $_snake_case_with_leading_underscore: 1px;
 }
 ```
 
-## Example 5
+## 例子 5
 
-Settings:
+设置:
 - `convention: strictbem`
 
-When enabled, the following are allowed:
+使用上面设置时，下面的写法是被允许的:
 
 ```scss
 $block-name__variable: 1px;
@@ -136,7 +136,7 @@ $block-name_mod-name__variable: 1px;
 }
 ```
 
-When enabled, the following are disallowed:
+使用上面设置时，下面的写法是不被允许的:
 
 ```scss
 $HYPHENATED-UPPERCASE: 1px;
@@ -146,12 +146,12 @@ $HYPHENATED-UPPERCASE: 1px;
 }
 ```
 
-## Example 6
+## 例子 6
 
-Settings:
+设置:
 - `convention: hyphenatedbem`
 
-When enabled, the following are allowed:
+使用上面设置时，下面的写法是被允许的:
 
 ```scss
 $block-name__variable: 1px;
@@ -163,7 +163,7 @@ $block-name--mod-name__variable: 1px;
 }
 ```
 
-When enabled, the following are disallowed:
+使用上面设置时，下面的写法是不被允许的:
 
 ```scss
 $HYPHENATED-UPPERCASE: 1px;
@@ -173,14 +173,14 @@ $HYPHENATED-UPPERCASE: 1px;
 }
 ```
 
-## Example 7
+## 例子 7
 
-Settings:
+设置:
 - `allow-leading-underscore: true`
 - `convention: ^[_A-Z]+$`
-- `convention-explanation: 'Variables must contain only uppercase letters and underscores'`
+- `convention-explanation: '变量只能包括大写字母和下滑线'`
 
-When enabled, the following are allowed:
+使用上面设置时，下面的写法是被允许的:
 
 ```scss
 $SCREAMING_SNAKE_CASE: 1px;
@@ -190,9 +190,9 @@ $SCREAMING_SNAKE_CASE: 1px;
 }
 ```
 
-When enabled, the following are disallowed:
+使用上面设置时，下面的写法是不被允许的:
 
-(Each line with a variable will report `Variables must contain only uppercase letters and underscores` when linted.)
+(当进行检查时，带有变量的每一行都会报告 `Mixins 只能包括大写字母和下滑线`)
 
 ```scss
 $HYPHENATED-UPPERCASE: 1px;

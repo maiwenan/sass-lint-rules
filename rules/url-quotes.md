@@ -1,10 +1,10 @@
-# URL Quotes
+# 链接的引号
 
-Rule `url-quotes` will enforce that URLs are wrapped in quotes.
+`url-quotes` 规则会强制链接被包含在引号里面。
 
-## Examples
+## 例子
 
-When enabled, the following are allowed:
+当启用时，下面的写法是被允许的:
 
 ```scss
 .foo {
@@ -17,7 +17,7 @@ When enabled, the following are allowed:
 
 ```
 
-When enabled, the following are disallowed:
+当启用时，下面的写法是不被允许的:
 
 ```scss
 .bar {

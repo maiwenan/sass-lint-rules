@@ -6,7 +6,7 @@
 
 * `allow-leading-underscore`: `true`/`false` (默认为 `true`)
 * `convention`: `'hyphenatedlowercase'` (默认), `camelcase`, `snakecase`,或者一个类名匹配的正则表达式 (例如：`^[_A-Z]+&`)
-* `convention-explanation`: 如果一个类名和规范不匹配，则把这个自定义的说明展示给用户。
+* `convention-explanation`: 如果一个 ID 命名和规范不匹配，则把这个自定义的说明展示给用户。
 * `ignore`: 一组被忽略的 ID 命名
 
 ## 例子 1

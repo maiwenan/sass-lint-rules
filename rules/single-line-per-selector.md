@@ -1,10 +1,10 @@
-# Single Line Per Selector
+# 每个选择器单独成行
 
-Rule `single-line-per-selector` will enforce whether selectors should be placed on a new line.
+`single-line-per-selector` 规则会强制选择器是否应该被放置在新的一行。
 
-## Examples
+## 例子
 
-When enabled, the following are allowed:
+当启用时，下面的写法是被允许的:
 
 ```scss
 .foo,
@@ -13,7 +13,7 @@ When enabled, the following are allowed:
 }
 ```
 
-When enabled, the following are disallowed:
+当启用时，下面的写法是不被允许的:
 
 ```scss
 .foo, .bar {

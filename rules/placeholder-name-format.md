@@ -1,21 +1,21 @@
-# Placeholder Name Format
+# 占位符命名风格
 
-Rule `placeholder-name-format` will enforce a convention for placeholder names.
+`placeholder-name-format` 规则会强制占位符命名遵循一种规范。
 
-## Options
+## 可选的配置参数
 
-* `allow-leading-underscore`: `true`/`false` (defaults to `true`)
-* `convention`: `'hyphenatedlowercase'` (default), `camelcase`, `snakecase`, [`strictbem`](https://en.bem.info/method/definitions/),
-[`hyphenatedbem`](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/), or a Regular Expression that the variable name must match (e.g. `^[_A-Z]+$`)
-* `convention-explanation`: Custom explanation to display to the user if a placeholder doesn't adhere to the convention
+* `allow-leading-underscore`: `true`/`false` (默认为 `true`)
+* `convention`: `'hyphenatedlowercase'` (默认), `camelcase`, `snakecase`, [`strictbem`](https://en.bem.info/method/definitions/),
+[`hyphenatedbem`](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/), 或者一个类名匹配的正则表达式 (例如：`^[_A-Z]+&`)
+* `convention-explanation`: 如果一个占位符命名和规范不匹配，则把这个自定义的说明展示给用户
 
-## Example 1
+## 例子 1
 
-Settings:
+设置:
 - `allow-leading-underscore: true`
 - `convention: hyphenatedlowercase`
 
-When enabled, the following are allowed:
+使用上面设置时，下面的写法是被允许的:
 
 ```scss
 %hyphenated-lowercase {
@@ -32,7 +32,7 @@ When enabled, the following are allowed:
 
 ```
 
-When enabled, the following are disallowed:
+使用上面设置时，下面的写法是不被允许的:
 
 ```scss
 %HYPHENATED-UPPERCASE {
@@ -48,13 +48,13 @@ When enabled, the following are disallowed:
 }
 ```
 
-## Example 2
+## 例子 2
 
-Settings:
+设置:
 - `allow-leading-underscore: false`
 - `convention: camelcase`
 
-When enabled, the following are allowed:
+使用上面设置时，下面的写法是被允许的:
 
 ```scss
 %camelCase {
@@ -66,7 +66,7 @@ When enabled, the following are allowed:
 }
 ```
 
-When enabled, the following are disallowed:
+使用上面设置时，下面的写法是不被允许的:
 
 ```scss
 %HYPHENATED-UPPERCASE {
@@ -82,13 +82,13 @@ When enabled, the following are disallowed:
 }
 ```
 
-## Example 3
+## 例子 3
 
-Settings:
+设置:
 - `allow-leading-underscore: false`
 - `convention: pascalcase`
 
-When enabled, the following are allowed:
+使用上面设置时，下面的写法是被允许的:
 
 ```scss
 %PascalCase {
@@ -100,7 +100,7 @@ When enabled, the following are allowed:
 }
 ```
 
-When enabled, the following are disallowed:
+使用上面设置时，下面的写法是不被允许的:
 
 ```scss
 %HYPHENATED-UPPERCASE {
@@ -116,13 +116,13 @@ When enabled, the following are disallowed:
 }
 ```
 
-## Example 4
+## 例子 4
 
-Settings:
+设置:
 - `allow-leading-underscore: false`
 - `convention: snakecase`
 
-When enabled, the following are allowed:
+使用上面设置时，下面的写法是被允许的:
 
 ```scss
 %snake_case {
@@ -134,7 +134,7 @@ When enabled, the following are allowed:
 }
 ```
 
-When enabled, the following are disallowed:
+使用上面设置时，下面的写法是不被允许的:
 
 ```scss
 %HYPHENATED-UPPERCASE {
@@ -150,12 +150,12 @@ When enabled, the following are disallowed:
 }
 ```
 
-## Example 5
+## 例子 5
 
-Settings:
+设置:
 - `convention: strictbem`
 
-When enabled, the following are allowed:
+使用上面设置时，下面的写法是被允许的:
 
 ```scss
 %block-name {
@@ -171,7 +171,7 @@ When enabled, the following are allowed:
 }
 ```
 
-When enabled, the following are disallowed:
+使用上面设置时，下面的写法是不被允许的:
 
 ```scss
 %HYPHENATED-UPPERCASE {
@@ -183,12 +183,12 @@ When enabled, the following are disallowed:
 }
 ```
 
-## Example 6
+## 例子 6
 
-Settings:
+设置:
 - `convention: hyphenatedbem`
 
-When enabled, the following are allowed:
+使用上面设置时，下面的写法是被允许的:
 
 ```scss
 %block-name {
@@ -204,7 +204,7 @@ When enabled, the following are allowed:
 }
 ```
 
-When enabled, the following are disallowed:
+使用上面设置时，下面的写法是不被允许的:
 
 ```scss
 %HYPHENATED-UPPERCASE {
@@ -216,14 +216,14 @@ When enabled, the following are disallowed:
 }
 ```
 
-## Example 7
+## 例子 7
 
-Settings:
+设置:
 - `allow-leading-underscore: true`
 - `convention: ^[_A-Z]+$`
-- `convention-explanation: 'Mixins must contain only uppercase letters and underscores'`
+- `convention-explanation: 'Mixins 只能包括大写字母和下滑线'`
 
-When enabled, the following are allowed:
+使用上面设置时，下面的写法是被允许的:
 
 ```scss
 %SCREAMING_SNAKE_CASE {
@@ -235,9 +235,9 @@ When enabled, the following are allowed:
 }
 ```
 
-When enabled, the following are disallowed:
+使用上面设置时，下面的写法是不被允许的:
 
-(Each line with a variable will report `Mixins must contain only uppercase letters and underscores` when linted.)
+(当进行检查时，带有占位符的每一行都会报告 `Mixins 只能包括大写字母和下滑线`)
 
 ```scss
 %HYPHENATED-UPPERCASE {

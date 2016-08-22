@@ -1,14 +1,14 @@
-# Space Between Parens
+# 括号之间的空格
 
-Rule `space-between-parens` will enforce whether or not a space should be included before the first item and after the last item inside parenthesis (`()`).
+`space-between-parens` 规则会强制一个空格是否应该被包含在括号 (`()`) 里面第一个元素的前面和最后一个元素的后面。
 
-## Options
+## 可选的配置参数
 
-* `include`: `true`/`false` (defaults to `false`)
+* `include`: `true`/`false` (默认为 `false`)
 
-## Examples
+## 例子
 
-When `include: false`, the following are allowed. When `include: true`, the following are disallowed:
+设置为 `include: false` 时，下面的写法是被允许的。设置为 `include: true` 时，下面的写法是不被允许的。
 
 ```scss
 @function foo($bar) {
@@ -26,7 +26,7 @@ When `include: false`, the following are allowed. When `include: true`, the foll
 }
 ```
 
-When `include: true`, the following are allowed. When `include: false`, the following are disallowed:
+设置为 `include: true` 时，下面的写法是被允许的。设置为 `include: false` 时，下面的写法是不被允许的。
 
 ```scss
 @function foo( $bar ) {

@@ -1,20 +1,20 @@
-# Variable For Property
+# 为属性使用变量
 
-Rule `variable-for-property` will enforce the use of variables for the values of specified properties.
-There are no properties by default, except for reserved words listed below which are always whitelisted:
+`variable-for-property` 规则会强制对指定的属性要使用变量作为值。
+默认情况下是没有指定的属性，除了下面列出来的预留的词组，他们总是处于白名单中。
 * inherit
 * initial
 * transparent
 * none
 * currentColor
 
-The `!important` flag will also be excluded when used.
+使用 `!important` 标识符时也总是例外的。
 
-## Options
+## 可选的配置参数
 
-* `properties`: `[array of property names]` (defaults to empty array `[]`)
+* `properties`: `[一组属性名称组成的数组]` (默认为空白数组 `[]`)
 
-You may pass an array of properties you wish to enforce the use of variables for
+你可以传递一组你希望强制使用变量作为值的属性
 
 ```yaml
 
@@ -26,11 +26,11 @@ variable-for-property:
     - 'content'
 ```
 
-## Examples
+## 例子
 
-By default `properties` is an empty array and therefore no properties are forced to use variables as values.
+默认情况下， `properties` 时一个空数组，因此没有属性是被强制要使用变量作为属性的。
 
-When `properties` contains the values shown in the options section example the following would be disallowed:
+当 `properties` 包含上面例子那一节所示的属性时，下面的写法是不被允许的:
 
 ```scss
 .bar {
@@ -47,7 +47,7 @@ When `properties` contains the values shown in the options section example the f
 }
 ```
 
-When `properties` contains the values shown in the options section example the following would be allowed:
+当 `properties` 包含上面例子那一节所示的属性时，下面的写法是被允许的:
 
 ```scss
 .foo {
@@ -65,9 +65,9 @@ When `properties` contains the values shown in the options section example the f
 
 ```
 
-The `!important` flag will be excluded from any lint warnings.
+`!important` 标识符会被任何 lint 警告排除开。
 
-For example if `properties` contains the value `color` the following would be disallowed
+例如如果 `properties` 包含了 `color` 这个属性，下面的写法是不被允许的:
 
 ```scss
 .foo {
@@ -75,7 +75,7 @@ For example if `properties` contains the value `color` the following would be di
 }
 ```
 
-The following would be allowed
+下面的写法是被允许的:
 
 ```scss
 .foo {

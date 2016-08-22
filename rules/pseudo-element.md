@@ -1,13 +1,12 @@
-# Pseudo-element
+# 伪元素/类
 
-Rule `pseudo-element` will enforce that:
+`pseudo-element` 规则会强制:
+* Pseudo-**element** 一定要以两个冒号开始。
+* Pseudo-**classes** 一定要以一个冒号开始。
 
-* Pseudo-**elements** must start with **double colons**.
-* Pseudo-**classes** must start with **single colon**.
+## 例子
 
-## Examples
-
-When enabled, the following are allowed:
+当启用时，下面的写法是被允许的:
 
 ```scss
 .foo::before {
@@ -19,7 +18,7 @@ When enabled, the following are allowed:
 }
 ```
 
-When enabled, the following are disallowed:
+当启用时，下面的写法是不被允许的:
 
 ```scss
 .foo:before {
