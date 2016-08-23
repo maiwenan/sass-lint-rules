@@ -1,0 +1,13 @@
+span {
+  &[class^='test'] {
+    display: block;
+  }
+
+  &[name='center'] {
+    text-align: center;
+  }
+
+  &[name='left'] {
+    text-align: left;
+  }
+}

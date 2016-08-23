@@ -42,7 +42,7 @@ rules:
   no-transition-all: 2
   no-universal-selectors: 0
   no-url-protocols: 2
-  no-vendor-prefixes: 
+  no-vendor-prefixes:
     - 2
     -
       ignore-non-standard: true
@@ -55,38 +55,38 @@ rules:
   force-pseudo-nesting: 2
 
   # Name Formats
-  class-name-format: 
+  class-name-format:
     - 2
     -
       allow-leading-underscore: false
-      convention: hypenatedlowercase
-  function-name-format: 
+      convention: hyphenatedlowercase
+  function-name-format:
     - 2
     -
       allow-leading-underscore: false
-      convention: hypenatedlowercase
+      convention: hyphenatedlowercase
   id-name-format: 0
-  mixin-name-format: 
+  mixin-name-format:
     - 2
     -
       allow-leading-underscore: false
-      convention: hypenatedlowercase
-  placeholder-name-format: 
+      convention: hyphenatedlowercase
+  placeholder-name-format:
     - 2
     -
       allow-leading-underscore: false
-      convention: hypenatedlowercase
-  variable-name-format: 
+      convention: hyphenatedlowercase
+  variable-name-format:
     - 2
     -
       allow-leading-underscore: false
-      convention: hypenatedlowercase
+      convention: hyphenatedlowercase
 
   # Style Guide
   attribute-quotes: 2
   bem-depth: 0
   border-zero: 2
-  brace-style: 
+  brace-style:
     - 2
     -
       allow-single-line: false
@@ -96,7 +96,7 @@ rules:
   hex-notation: 2
   indentation: 2
   leading-zero: 2
-  nesting-depth: 
+  nesting-depth:
     - 2
     -
       max-depth: 3

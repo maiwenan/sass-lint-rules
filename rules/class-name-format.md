@@ -16,7 +16,7 @@
 
 设置:
 - `allow-leading-underscore: true`
-- `convention: hypenatedlowercase`
+- `convention: hyphenatedlowercase`
 
 使用上面设置时，下面的写法是被允许的:
 
@@ -53,7 +53,7 @@
 
 设置:
 - `allow-leading-underscore: false`
-- `convention: hypenatedlowercase`
+- `convention: hyphenatedlowercase`
 
 使用上面设置时，下面的写法是被允许的:
 
@@ -209,7 +209,7 @@
 ## 例子 7
 
 设置:
-- `convertion: hypenatedbem`
+- `convertion: hyphenatedbem`
 
 使用上面设置时，下面的写法是被允许的:
 
