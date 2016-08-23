@@ -1,4 +1,4 @@
-# Sass Lint Rules [![Build Status](https://travis-ci.org/maiwenan/sass-lint-rules.svg?branch=master)](https://travis-ci.org/maiwenan/sass-lint-rules)
+# Sass Lint Rules [![npm version](https://badge.fury.io/js/sass-lint-rules.svg)](https://badge.fury.io/js/sass-lint-rules) [![Build Status](https://travis-ci.org/maiwenan/sass-lint-rules.svg?branch=master)](https://travis-ci.org/maiwenan/sass-lint-rules)
 
 [sass-lint](https://github.com/sasstools/sass-lint) 所定义的规则的翻译，并提供了一份 `sass` 的编码规范。
 
