@@ -1,6 +1,6 @@
 {
   "name": "sass-lint-rules",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "sass-lint 规则的翻译",
   "main": "index.js",
   "scripts": {
