@@ -6,7 +6,7 @@
   "scripts": {
     "test": "sass-lint -v -q",
     "postpublish": "git push --all",
-    "preversion": "npm run test && git commit -m 'update version'"
+    "preversion": "npm run test"
   },
   "keywords": [
     "sass-lint",
