@@ -5,10 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "sass-lint -v -q",
-    "postpublish": "git push --all",
+    "postpublish": "git push --all && git push origin --tags",
     "preversion": "npm run test"
   },
   "keywords": [
+    "sass",
     "sass-lint",
     "rules",
     "code standard"
