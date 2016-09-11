@@ -8,11 +8,11 @@
 * [Mixins](#Mixins)
 * [行距](#行距)
 * [禁止的做法](#禁止的做法)
-* 嵌套
-* 命名风格
-* 样式规范
-* 空格
-* 结尾项
+* [嵌套](#嵌套)
+* [命名风格](#命名风格)
+* [样式规范](#样式规范)
+* [空格](#空格)
+* [结尾项](#结尾项)
 
 
 ## 继承
@@ -370,6 +370,9 @@
 @warn 'foo';
 ```
 
+
+## 嵌套
+
 * 使用属性选择器时，需要使用嵌套的写法
 
 ```
@@ -418,7 +421,10 @@ div {
 }
 ```
 
-* 类选择器、方法、变量、 mixin 以及占位符命名使用 `hyphenatedlowercase` 风格
+
+## 命名风格
+
+* 类选择器、方法、变量、 mixin 以及占位符命名使用 `hyphenatedlowercase` 风格，即多个分词使用破折号分隔
 
 ```
 // bad
@@ -466,23 +472,389 @@ $min-height: 10;
 }
 ```
 
-* 
+
+## 样式规范
+
+* 属性选择器中的属性值需要使用引号包含起来
+
+```
+// bad
+span[class^=main] {
+  background-color: #ff0;
+}
+
+// good
+span[class^='main'] {
+  background-color: #ff0;
+}
+```
+
+* 当元素的边框需要设置为 0 时，建议直接设置为 `0` ，不要设置为 `none`
+
+```
+// bad
+.foo {
+  border: none;
+}
+
+// good
+.foo {
+  border: 0;
+}
+```
+
+* 使用大括号时，开括号应该在选择器、方法或者 mixin 等的后面，收括号应该单独成行；如果样式规则只声明了一个属性也需要这样做。
+
+```
+// bad
+.foo
+{
+  width: 100px;
+}
+@function foo()
+{
+  width: 100px;
+}
+@mixin foo
+{
+  width: 100px;
+}
+.foo { color: #fff; }
+
+// good
+.foo {
+  width: 100px;
+}
+@function foo() {
+  width: 100px;
+}
+@mixin foo {
+  width: 100px;
+}
+```
+
+* `@import` 的路径不要使用开头处的下划线和（或者）文件名后缀
+
+```
+// bad
+@import "foo.scss";
+@import "_bar";
+
+// good
+@import "foo";
+@import "bar";
+```
+
+* 当声明或者调用一个 `mixin` 的时候，如果没有定义任何参数或者没有使用任何参数，就不需要使用括号
+
+```
+// bad
+@mixin foo() {
+  width: 100px;
+}
+@include foo();
+
+// good
+@mixin foo {
+  width: 100px;
+}
+@include foo;
+```
+
+* 使用十六进制的值时，能简写的一定要简写
+
+```
+// bad
+.foo {
+  color: #ffffff;
+}
+
+// good
+.foo {
+  color: #fff;
+}
+```
+
+* 缩进的地方统一使用 2 个空格
+
+```
+// bad
+.foo {
+   width: 100px;
+}
+.bar {
+    color: #f00;
+}
+
+// good
+.foo {
+  width: 100px;
+}
+.bar {
+  color: #f00;
+}
+```
+
+* 当属性的值包含数字时，如果整数位是 0 ，小数点不为 0 的，整数位的 0 都不要写
+
+```
+// bad
+.foo {
+  margin-left: 0.6rem;
+}
+
+// good
+.foo {
+  margin-left: .6rem;
+}
+```
+
+* 选择器的最大嵌套层数不能超过 3 层
+
+```
+// bad
+.foo {
+  .bar {
+    .content {
+      .title {
+        width: 100px;
+      }
+    }
+  }
+}
+
+// good
+.foo {
+  .title {
+    width: 100px;
+  }
+}
+.foo {
+  .bar {
+    .title {
+      width: 100px;
+    }
+  }
+}
+```
+
+* 规则属性的声明顺序需要遵循 [`recess`](https://github.com/sasstools/sass-lint/blob/develop/lib/config/property-sort-orders/recess.yml) 风格
+
+* 需要使用引号的字符串都要使用单引号 (`'`)
+
+```
+// bad
+.foo[^class="bar"] {
+  width: 100px;
+}
+.bar {
+  content: "12";
+}
+
+// good
+.foo[^class='bar'] {
+  width: 100px;
+}
+.bar {
+  content: '12';
+}
+```
+
+* 多个值的属性需要使用简洁模式
+
+```
+// bad
+margin: 1px 1px 1px 1px;
+
+// good
+margin: 1px;
+```
+
+* 当属性的值使用到路径或者网址时，其值不要使用引号包含起来
+
+```
+// bad
+.foo {
+  background-image: url('./images/logo.png');
+}
+
+// good
+.foo {
+  background-image: url(./images/logo.png);
+}
+```
+
+* 属性值的大小为 `0` 的不要使用单位
+
+```
+// bad
+.foo {
+  margin-left: 0px;
+}
+
+// good
+.foo {
+  margin-left: 0;
+}
+```
 
 
+## 空格
+
+* 括号 (`()`) 里面第一个元素的前面和最后一个元素的后面都不要使用一个空格进行分隔
+
+```
+// bad
+@function foo( $bar ) {
+  @return $bar;
+}
+
+@mixin bar($baz ) {
+  content: $baz;
+}
+
+.foo {
+  @include bar( 'Hello' );
+  content: foo( 'bar');
+  width: calc( 100% - 10px);
+}
+
+// good
+@function foo($bar) {
+  @return $bar;
+}
+
+@mixin bar($baz) {
+  content: $baz;
+}
+
+.foo {
+  @include bar('Hello');
+  content: foo('bar');
+  width: calc(100% - 10px);
+}
+```
+
+* 操作符的前面和后面都要使用一个空格和其前面或者后面的内容进行分隔；操作符 : `+`, `-`, `/`, `*`, `%`, `<`, `>` `==`, `!=`, `<=` and `>=`
+
+```
+// bad
+.foo {
+  margin: 5px +15px;
+}
+$foo: 1+1;
+$bar: 1+ 1;
+
+// good
+.foo {
+  margin: 5px + 15px;
+}
+$foo: 1 + 1;
+$bar: 1 + 1;
+```
+
+* 叹号 (`!`) 不要使用一个空格和其后面的内容进行分隔
+
+```scss
+// bad
+.foo {
+  content: 'bar' ! important;
+}
+
+// good
+.foo {
+  content: 'bar' !important;
+}
+```
+
+* 冒号 (`:`) 、逗号 (`,`) 等要使用一个空格和其后面的内容进行分隔
+
+```scss
+// bad
+.foo {
+  content:'bar';
+}
+.foo {
+  @include baz('foo','bar');
+
+  box-shadow: 1px 1px black,1px 1px black;
+}
+
+// good
+.foo {
+  content: 'bar';
+}
+.foo {
+  @include baz('foo', 'bar');
+
+  box-shadow: 1px 1px black, 1px 1px black;
+}
+```
+
+* 叹号 (`!`) 、开大括号 (`{`) 等要使用一个空格和其前面的内容进行分隔
+
+```scss
+// bad
+.foo {
+  content: 'bar'!important;
+}
+.bar{
+  width: 100px;
+}
+
+// good
+.foo {
+  content: 'bar' !important;
+}
+.bar {
+  100px;
+}
+
+```
+
+* 冒号 (`:`) 不要使用一个空格和其前面的内容进行分隔
+
+```scss
+// bad
+.foo {
+  content : 'bar';
+}
+
+// good
+.foo {
+  content: 'bar';
+}
+```
 
 
+## 结尾项
 
+* 文件应该要以新的一行结尾
 
+```scss
+// bad
+.foo {
+  content: 'bar';
+}
+// 该注释下没有新的空行
+// good
+.foo {
+  content: 'bar';
+}
+// 该注释下有新的空行
 
+```
 
+* 在一个样式块中样式声明的最后要包含一个分号 (`;`) (`.sass` 语法除外)
 
+```
+// bad
+.foo {
+  width: 100px
+}
 
-
-
-
-
-
-
-
-
-
+// good
+.foo {
+  width: 100px;
+}
+```

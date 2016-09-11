@@ -14,7 +14,7 @@
 .foo {
   content: 'bar';
 }
-// Newline under this comment at end of file
+// 该注释下有新的空行
 
 ```
 
@@ -24,5 +24,5 @@
 .foo {
   content: 'bar';
 }
-// No newline under this comment at end of file
+// 该注释下没有新的空行
 ```
